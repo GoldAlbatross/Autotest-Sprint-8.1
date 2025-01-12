@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class Mesto1Test {
 
-    String bearerToken = "1eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjY5YTZlY2QxNzRhNDAwM2QwYWE0Y2YiLCJpYXQiOjE3MzY2MzI0NTAsImV4cCI6MTczNzIzNzI1MH0.O5sBHWDyLO5Qc23C2-EyevMtbtjFvUa24HEiLH9OzQ4";
+    String bearerToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjY5YTZlY2QxNzRhNDAwM2QwYWE0Y2YiLCJpYXQiOjE3MzY2MzI0NTAsImV4cCI6MTczNzIzNzI1MH0.O5sBHWDyLO5Qc23C2-EyevMtbtjFvUa24HEiLH9OzQ4";
 
     @Before
     public void setUp() {
@@ -25,7 +25,7 @@ public class Mesto1Test {
                 .header("Content-type", "application/json") // Передаём Content-type в заголовке для указания типа файла
                 .auth().oauth2(bearerToken) // Передаём токен для аутентификации
                 .body("{\"name\":\"Москва\",\"link\":\"https://code.s3.yandex.net/qa-automation-engineer/java/files/paid-track/sprint1/photoSelenium.jpg\"}") // Формируем тело запроса
-                .post("/api/cards") // Делаем POST-запрос
+                .post("/api/card") // Делаем POST-запрос
                 .then().statusCode(201); // Проверяем код ответа
     }
 
